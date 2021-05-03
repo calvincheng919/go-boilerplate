@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"sms-service/src/handlers"
-	"sms-service/src/utils"
+	"my-service/src/handlers"
+	"my-service/src/utils"
 )
 
 func main() {
@@ -21,6 +21,7 @@ func main() {
 	 * curl http://localhost:8080/version
 	 * @apiSuccess {String} version current version
 	 */
+	// TODO: add base route i.e., /myservice/version
 	app.GET("/version", handlers.Version)
 
 	func() { _ = app.Run() }()

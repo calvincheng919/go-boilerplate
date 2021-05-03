@@ -1,9 +1,38 @@
 package main
 
-import "testing"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"my-service/src/config"
+	T "my-service/src/types"
+	"net/http"
+	"testing"
+)
 
-func TestMath (t *testing.T) {
-	if 2+2 == 5 {
-		t.Errorf("You must be living in 1984")
+// test name must be of form Test*
+func TestVersionRoute(t *testing.T) {
+	// make request
+	url := fmt.Sprint(config.BaseURL, "/version") // TODO: fix url to include base location i.e., /myservice/version
+	response, err := http.Get(url)
+	if err != nil {
+		t.Errorf("request error in test: %v", err)
+	}
+	defer func() { _ = response.Body.Close() }()
+
+	// read response
+	payload, decodeErr := ioutil.ReadAll(response.Body)
+	if decodeErr != nil {
+		t.Errorf("decode error in test: %v", decodeErr)
+	}
+	var result T.Map
+	if err := json.Unmarshal(payload, &result); err != nil {
+		t.Errorf("unmarshal error in test: %v", err)
+	}
+
+	// test response
+	if result["version"] != "1.0.0" {
+		fmt.Println(string(payload))
+		t.Errorf("wrong version!\n Expected '0.0.0', but got %s\n Full response: %s", result["version"], string(payload))
 	}
 }
