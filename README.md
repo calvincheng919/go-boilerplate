@@ -1,5 +1,5 @@
 ## Start
-- `$ git clone git@github.com:lemonbrew/rest-go-boilerplate.git`
+- `$ git clone git@github.com:lemonbrew/go-service-boilerplate.git`
 - `$ go run src/main.go`
 
 ## Run tests
