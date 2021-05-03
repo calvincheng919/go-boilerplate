@@ -29,7 +29,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/version",
+    "url": "/myservice/version",
     "title": "",
     "name": "Version",
     "description": "<p>displays version</p>",
@@ -38,7 +38,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Curl Example:",
-        "content": "curl http://localhost:8080/version",
+        "content": "curl http://localhost:8080/myservice/version",
         "type": "curl"
       }
     ],

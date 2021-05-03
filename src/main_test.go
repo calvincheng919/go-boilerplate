@@ -13,7 +13,7 @@ import (
 // test name must be of form Test*
 func TestVersionRoute(t *testing.T) {
 	// make request
-	url := fmt.Sprint(config.BaseURL, "/version") // TODO: fix url to include base location i.e., /myservice/version
+	url := fmt.Sprint(config.BaseURL, "/myservice/version")
 	response, err := http.Get(url)
 	if err != nil {
 		t.Errorf("request error in test: %v", err)
@@ -31,7 +31,7 @@ func TestVersionRoute(t *testing.T) {
 	}
 
 	// test response
-	if result["version"] != "1.0.0" {
+	if result["version"] != "0.0.0" {
 		fmt.Println(string(payload))
 		t.Errorf("wrong version!\n Expected '0.0.0', but got %s\n Full response: %s", result["version"], string(payload))
 	}

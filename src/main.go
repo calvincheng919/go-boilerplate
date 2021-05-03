@@ -12,17 +12,16 @@ func main() {
 	app.Use(utils.CORSMiddleware())
 
 	/**
-	 * @api {get} /version
+	 * @api {get} /myservice/version
 	 * @apiName Version
 	 * @apiDescription displays version
 	 * @apiGroup misc
 	 * @apiVersion 0.0.0
 	 * @apiExample {curl} Curl Example:
-	 * curl http://localhost:8080/version
+	 * curl http://localhost:8080/myservice/version
 	 * @apiSuccess {String} version current version
 	 */
-	// TODO: add base route i.e., /myservice/version
-	app.GET("/version", handlers.Version)
+	app.GET("/myservice/version", handlers.Version)
 
 	func() { _ = app.Run() }()
 }

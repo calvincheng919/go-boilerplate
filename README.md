@@ -13,7 +13,10 @@
 - `$ apidoc -o docs`
 
 ## Converting from boilerplate to specific service
-- `$ rm go.mod`
-- `$ go mod init my-actual-service`
-- Change imports to reflect new name in `main.go` and `main_test.go`
-- Make /version a legit route (see TODOs)
+- Replace boilderplate module name with actual module name 
+  - `$ rm go.mod`
+  - `$ go mod init my-actual-service`
+  - Change imports to reflect new name in `main.go` and `main_test.go`
+- Replace boilerplate git repo with actual git repo
+  - `$ rm -rf .git`
+  - `$ git init .`
