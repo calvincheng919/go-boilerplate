@@ -22,7 +22,7 @@ zip:
 golib:
 	GOPRIVATE=github.com/lemonbrew/golib go get github.com/lemonbrew/golib
 
-docs:
+doc:
 	apidoc -o docs
 
 init:
