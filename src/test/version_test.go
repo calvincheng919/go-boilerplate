@@ -12,7 +12,7 @@ import (
 // test name must be of form Test*
 func TestVersionRoute(t *testing.T) {
 	// make request
-	url := `http://localhost:8080/version`
+	url := `http://localhost:8080/api/version`
 	response, err := http.Get(url)
 	if err != nil {
 		t.Errorf("request error in test: %v", err)

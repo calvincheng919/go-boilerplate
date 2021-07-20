@@ -23,13 +23,13 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "./docs/main.js",
-    "group": "C:\\Users\\JordanCotter\\Development\\lemonbrew\\go-service-boilerplate\\docs\\main.js",
-    "groupTitle": "C:\\Users\\JordanCotter\\Development\\lemonbrew\\go-service-boilerplate\\docs\\main.js",
+    "group": "/home/jordan/Development/lb/go-service-boilerplate/docs/main.js",
+    "groupTitle": "/home/jordan/Development/lb/go-service-boilerplate/docs/main.js",
     "name": ""
   },
   {
     "type": "get",
-    "url": "/myservice/version",
+    "url": "/api/version",
     "title": "",
     "name": "Version",
     "description": "<p>displays version</p>",
@@ -38,7 +38,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Curl Example:",
-        "content": "curl http://localhost:8080/myservice/version",
+        "content": "curl http://localhost:8080/api/version",
         "type": "curl"
       }
     ],
@@ -55,7 +55,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "./src/main.go",
+    "filename": "./src/handlers/version.go",
     "groupTitle": "misc"
   }
 ] });
