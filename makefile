@@ -11,7 +11,7 @@ testserver:
 	ENV="test" go run src/main.go
 
 test: 
-	BASE_URL=http://localhost:8080 go test ./src
+	go test ./src/test
 
 build:
 	rm main; goos=linux go build src/main.go

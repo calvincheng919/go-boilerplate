@@ -11,17 +11,9 @@ func main() {
 
 	app.Use(utils.CORSMiddleware())
 
-	/**
-	 * @api {get} /myservice/version
-	 * @apiName Version
-	 * @apiDescription displays version
-	 * @apiGroup misc
-	 * @apiVersion 0.0.0
-	 * @apiExample {curl} Curl Example:
-	 * curl http://localhost:8080/myservice/version
-	 * @apiSuccess {String} version current version
-	 */
-	app.GET("/myservice/version", handlers.Version)
+	app.GET("/version", handlers.Version)
+
+	app.GET("/", handlers.Home)
 
 	func() { _ = app.Run() }()
 }

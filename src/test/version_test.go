@@ -1,10 +1,9 @@
-package main
+package test
 
 import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"my-service/src/config"
 	T "my-service/src/types"
 	"net/http"
 	"testing"
@@ -13,7 +12,7 @@ import (
 // test name must be of form Test*
 func TestVersionRoute(t *testing.T) {
 	// make request
-	url := fmt.Sprint(config.BaseURL, "/myservice/version")
+	url := `http://localhost:8080/version`
 	response, err := http.Get(url)
 	if err != nil {
 		t.Errorf("request error in test: %v", err)

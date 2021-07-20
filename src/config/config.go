@@ -2,4 +2,5 @@ package config
 
 import "os"
 
-var BaseURL = os.Getenv("BASE_URL")
+// ENV VARS GO HERE
+var _ = os.Getenv("")
